@@ -3,10 +3,10 @@ import {
   createBrowserRouter,
   // createRoutesFromElements,
   // Route,
-
 } from "react-router-dom";
-import HomePage from "./Home";
-import ProductsPage from "./Products";
+import HomePage from "./pages/Home";
+import ProductsPage from "./pages/Products";
+import RootLayout from "./pages/Root";
 
 // const routeDefinitions = createRoutesFromElements(
 //     <Route>
@@ -19,14 +19,16 @@ import ProductsPage from "./Products";
 //http://example.com/products
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <p>
-        <HomePage />
-      </p>
-    ),
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      { path: "/product", element: <ProductsPage /> },
+    ],
   },
-  { path: "/product", element: <ProductsPage /> },
 ]);
 
 // const router = createBrowserRouter(routeDefinitions);
