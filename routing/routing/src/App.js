@@ -25,13 +25,16 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
+      //without "/" paths are relative and with that are absolute paths.
       {
-        path: "/",
+        path: "",
         element: <HomePage />,
       },
-      { path: "/product", element: <ProductsPage />},
+      { path: "product", element: <ProductsPage />},
+        
       //after / colon : is a dynamic part.
-      {path: "/product/:productId", element: <ProductDetail />},
+      //this is the direct child of the path:"/" or "/root" and sibling with "/products"
+      {path: "product/:productId", element: <ProductDetail />},
 
       //Different path needs more lines of code and will not be dynamic.
       // {path: "/product/product-2", element: <ProductDetail />},
