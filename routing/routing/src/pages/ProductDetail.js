@@ -6,7 +6,8 @@ function ProductDetail() {
     return (
         <>
             <h1>Product Details</h1>
-            <p>{params.ProductId}</p>
+            <p>{params.productId}</p>
+            
         </>
     )
 }
