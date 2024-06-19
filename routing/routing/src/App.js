@@ -30,9 +30,12 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       { path: "/product", element: <ProductsPage />},
-      {path: "/product/product-1", element: <ProductDetail />},
-      {path: "/product/product-2", element: <ProductDetail />},
-      {path: "/product/product-3", element: <ProductDetail />}
+      //after / colon : is a dynamic part.
+      {path: "/product/:productId", element: <ProductDetail />},
+
+      //Different path needs more lines of code and will not be dynamic.
+      // {path: "/product/product-2", element: <ProductDetail />},
+      // {path: "/product/product-3", element: <ProductDetail />}
     ],
   },
 ]);
