@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import classes from "./mainNavigation.module.css";
 function MainNavigation() {
   return (
@@ -6,10 +6,30 @@ function MainNavigation() {
       <nav>
         <ul className={classes.list}>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              style={({ isActive }) => ({
+                textAlign: isActive ? "center" : "left",
+              })}
+              F
+              //end used to tell that if only this above path is used only then show highlights otherwise no.
+              end
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/product">Product</Link>
+            <NavLink
+              to="/product"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Product
+            </NavLink>
           </li>
         </ul>
       </nav>
