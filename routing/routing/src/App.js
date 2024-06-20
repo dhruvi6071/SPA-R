@@ -21,7 +21,7 @@ import ProductDetail from "./pages/ProductDetail";
 //http://example.com/products
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
@@ -30,11 +30,11 @@ const router = createBrowserRouter([
         path: "",
         element: <HomePage />,
       },
-      { path: "product", element: <ProductsPage />},
-        
+      { path: "product", element: <ProductsPage /> },
+
       //after / colon : is a dynamic part.
       //this is the direct child of the path:"/" or "/root" and sibling with "/products"
-      {path: "product/:productId", element: <ProductDetail />},
+      { path: "product/:productId", element: <ProductDetail /> },
 
       //Different path needs more lines of code and will not be dynamic.
       // {path: "/product/product-2", element: <ProductDetail />},

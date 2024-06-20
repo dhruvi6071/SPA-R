@@ -2,8 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 function HomePage() {
   const navigate = useNavigate();
 
-  function navigateHandler () {
-    navigate('/product');
+  function navigateHandler() {
+    navigate("/product");
   }
   return (
     <>
